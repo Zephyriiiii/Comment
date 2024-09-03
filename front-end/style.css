@@ -1,0 +1,121 @@
+/* 评论提交表单区域 */
+.submit-form {
+    display: flex;
+    flex-direction: column;
+    height: 35vh;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    justify-content: space-between; 
+    /* 用vh/vw为单位，适应不同大小的视窗 */
+    margin-bottom: 3vh;
+    margin-top: 3vh;
+    margin-left: 25vw;
+    margin-right: 25vw;
+    border: #333 solid 1.5px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input-group input {
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+/* 单独设置提交按钮，让按钮显示在右下方 */
+.button-group {
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.submit-form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-form button:hover {
+    background-color: #555;
+}
+/* 评论区域 */
+.comment {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    border-left: #000000 solid 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-left: 25vw;
+    margin-right: 25vw;
+}
+/* 悬停效果 */
+.comment:hover {
+    background: #eef0f2;;
+    box-shadow:  10px 10px 20px #cfd6dc,
+                 -10px -10px 20px #fdffff;
+}
+/* 用户名和内容间有一定margin */
+.comment .comment-nameandcontent h3 {
+    margin-top: auto;
+    margin-bottom: 5px;
+}
+
+.comment .comment-nameandcontent .content {
+    flex-grow: 1;
+}
+/* 删除按钮用flex-end放在右下角 */
+.comment .delete-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.comment .delete-btn .delete {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.comment .delete:hover {
+    background-color: #c0392b;
+}
+
+/* 分页按钮区域 */
+.pagination {
+    display: flex;
+    justify-content: center; /* 居中显示分页按钮 */
+    margin-top: 20px;
+}
+
+.page-btn {
+    padding: 8px 12px;
+    margin: 0 5px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.page-btn:disabled {
+    background-color: #bbb; /* 禁用时按钮颜色变浅 */
+    cursor: not-allowed;
+}
+/* 当按钮没有被禁用时的悬停效果 */
+.page-btn:hover:not(:disabled) {
+    background-color: #555;
+}
