@@ -23,6 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
             totalComments = result.data.total;
             //console.log(result);
             renderComments(result.data.comments);
+            // 计算当前总页数，如果当前页大于总页数，则显示最后一页
+            // 这是为了防止删除了只有一条评论的页（但不是第一页）的评论，出现的空页显示，此时自动更新到前一页
+            const totalPages = Math.ceil(totalComments / maxCommentsPerPage);
+            if (currentPage > totalPages) {
+                currentPage = totalPages;
+                fetchComments();
+            }
         } else {
             alert('Failed to fetch comments: ' + result.msg);
         }
